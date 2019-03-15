@@ -19,5 +19,6 @@ endif
 all: tute2.c 
 	gcc -o tute2 -Wall -lGL -lGLU -lglut tute2.c
 
+.PHONY: clean
 clean: 
 	$(RM) tute2
