@@ -11,18 +11,11 @@ typedef struct Vec2f {
 	float y;
 } vec2f;
 
-struct FlatCar {
-	vec2f startPosition;
+typedef struct Object {
+	vec2f startPos;
 	vec2f size;
 	vec3f color;
-} flatCar;
-
-struct FlatLog {
-	vec2f startPosition;
-	vec2f size;
-	vec3f color;
-} flatLog;
-
+} car, mylog, road;
 
 void drawAxis(float length);
 void drawRect(vec2f startPos, vec2f size, vec3f color);
