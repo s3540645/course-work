@@ -20,7 +20,9 @@ src= tute3.c
 # build an executable named tute1 from tute1.c
 all: tute3.c
 	$(CC) $(CFLAGS) -Wno-deprecated-declarations -o tute3 $(src) $(LDFLAGS) 
-
+.PHONY: run
+run:
+	./tute3
 .PHONY: clean
 clean: 
 	$(RM) tute3
