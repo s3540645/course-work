@@ -1,24 +1,26 @@
 # Linux (default)
-TARGET = tute1
-LDFLAGS = -lGL -lGLU -lglut
+TARGET = assignment
+LDFLAGS = -lm -lGL -lGLU -lglut
 CFLAGS = -Wall -std=c99
 
 # Windows (cygwin)
 ifeq "$(OS)" "Windows_NT"
-TARGET = tute2.exe
+TARGET = assignment.exe
 CFLAGS += -D_WIN32
 endif
 
 # OS X
-ifeq "$(OSTYPE)" "darwin"
-LDFLAGS = -framework Carbon -framework OpenGL -framework GLUT
-CFLAGS += -D__APPLE__
-endif
+#ifeq "$(OSTYPE)" "darwin"
+#LDFLAGS = -framework Carbon -framework OpenGL -framework GLUT
+#CFLAGS += -D__APPLE__
+#endif
 
+CC=gcc
+src= tute3.c
 # build an executable named tute1 from tute1.c
-all: tute2.c 
-	gcc -o tute2 -Wall -lGL -lGLU -lglut tute2.c
+all: tute3.c
+	$(CC) $(CFLAGS) -Wno-deprecated-declarations -o tute3 $(src) $(LDFLAGS) 
 
 .PHONY: clean
 clean: 
-	$(RM) tute2
+	$(RM) tute3
